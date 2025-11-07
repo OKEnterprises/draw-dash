@@ -1,0 +1,39 @@
+.app {
+  min-height: 100vh;
+}
+
+.app__header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 24px 0;
+}
+
+.app__header h1 {
+  font-size: 32px;
+  color: #333;
+  font-weight: 600;
+}
+
+.app__tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.app__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 20px;
+  color: #666;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .app__tasks {
+    grid-template-columns: 1fr;
+  }
+
+  .app__header h1 {
+    font-size: 24px;
+  }
+}
