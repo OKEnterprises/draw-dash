@@ -29,6 +29,7 @@
 .task-card__header {
   display: flex;
   justify-content: flex-end;
+  gap: 8px;
   margin-bottom: 12px;
 }
 
@@ -67,6 +68,11 @@
 .task-card__button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.task-card__button--todo:hover:not(:disabled) {
+  background-color: white;
+  border-color: #999;
 }
 
 .task-card__button--pending:hover:not(:disabled) {
