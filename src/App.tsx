@@ -3,6 +3,7 @@ import { Task, TaskStatus } from './types';
 import AddTask from './AddTask';
 import Filter from './Filter';
 import TaskCard from './TaskCard';
+import FloatingDrawButton from './FloatingDrawButton';
 import './App.css';
 
 const STORAGE_KEY = 'draw-dash-tasks';
@@ -42,6 +43,8 @@ function App() {
       <header className="app__header">
         <h1>Task Management System</h1>
       </header>
+
+      <FloatingDrawButton onTaskCreated={addTask} />
 
       <AddTask onAddTask={addTask} />
 
