@@ -23,8 +23,19 @@
   border-radius: 4px;
   overflow: hidden;
   background-color: white;
+}
+
+.handwriting-input__canvas-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
   background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .handwriting-input__canvas {
