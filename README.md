@@ -5,6 +5,11 @@ A simple and intuitive task management application built with React and TypeScri
 ## Features
 
 - **Add Tasks**: Click the "Add New Task" button to create a new task card
+- **Handwriting Detection**: Draw your task with handwriting and let AI recognize it!
+  - Click the "Draw" button to switch to handwriting mode
+  - Draw your task on the canvas with your mouse or touch screen
+  - Click "Recognize" to convert your handwriting to text
+  - Uses Tesseract.js for optical character recognition (OCR)
 - **Update Status**:
   - Click "Pending" button (top right of card) to mark task as pending
   - Click "Done" button (bottom right of card) to mark task as complete
@@ -46,3 +51,5 @@ npm run preview
 - TypeScript
 - Vite
 - CSS3
+- react-signature-canvas (for drawing interface)
+- Tesseract.js (for OCR handwriting recognition)
