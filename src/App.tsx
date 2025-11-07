@@ -1,13 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Task, TaskStatus } from './types';
 import AddTask from './AddTask';
 import Filter from './Filter';
 import TaskCard from './TaskCard';
 import './App.css';
 
+const STORAGE_KEY = 'draw-dash-tasks';
+
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const storedTasks = localStorage.getItem(STORAGE_KEY);
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
   const [selectedStatuses, setSelectedStatuses] = useState<TaskStatus[]>(['todo', 'pending', 'done']);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (text: string) => {
     const newTask: Task = {
