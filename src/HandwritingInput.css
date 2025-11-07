@@ -5,6 +5,16 @@
   padding: 16px;
 }
 
+.handwriting-input__error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  border-left: 4px solid #c62828;
+}
+
 .handwriting-input__canvas-container {
   position: relative;
   width: 100%;
