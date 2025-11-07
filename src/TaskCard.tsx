@@ -11,6 +11,13 @@ export default function TaskCard({ task, onStatusChange }: TaskCardProps) {
     <div className={`task-card task-card--${task.status}`}>
       <div className="task-card__header">
         <button
+          className="task-card__button task-card__button--todo"
+          onClick={() => onStatusChange(task.id, 'todo')}
+          disabled={task.status === 'todo'}
+        >
+          Todo
+        </button>
+        <button
           className="task-card__button task-card__button--pending"
           onClick={() => onStatusChange(task.id, 'pending')}
           disabled={task.status === 'pending'}
