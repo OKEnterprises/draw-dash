@@ -1,0 +1,188 @@
+/* Floating button */
+.floating-type-button {
+  position: fixed;
+  top: 20px;
+  right: 90px; /* 60px button + 10px gap + 20px from right of draw button */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-type-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.floating-type-button:active {
+  transform: scale(0.95);
+}
+
+/* Full-screen overlay */
+.floating-type-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f5f5;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Header */
+.floating-type-overlay__header {
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.floating-type-overlay__header h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.floating-type-overlay__header p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.floating-type-overlay__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.floating-type-overlay__close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Content area */
+.floating-type-overlay__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.floating-type-overlay__textarea {
+  flex: 1;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease;
+}
+
+.floating-type-overlay__textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.floating-type-overlay__submit {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.floating-type-overlay__submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.floating-type-overlay__submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.floating-type-overlay__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .floating-type-button {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    right: 80px; /* 50px button + 10px gap + 20px from right of draw button */
+  }
+
+  .floating-type-overlay__header h2 {
+    font-size: 20px;
+  }
+
+  .floating-type-overlay__header p {
+    font-size: 12px;
+  }
+
+  .floating-type-overlay__content {
+    padding: 20px;
+  }
+
+  .floating-type-overlay__textarea {
+    font-size: 14px;
+    padding: 16px;
+  }
+
+  .floating-type-overlay__submit {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+}

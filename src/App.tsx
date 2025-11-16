@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Task, TaskStatus } from './types';
-import AddTask from './AddTask';
 import Filter from './Filter';
 import TaskCard from './TaskCard';
+import FloatingTypeButton from './FloatingTypeButton';
 import FloatingDrawButton from './FloatingDrawButton';
 import './App.css';
 
@@ -44,9 +44,8 @@ function App() {
         <h1>Task Management System</h1>
       </header>
 
+      <FloatingTypeButton onTaskCreated={addTask} />
       <FloatingDrawButton onTaskCreated={addTask} />
-
-      <AddTask onAddTask={addTask} />
 
       <Filter
         selectedStatuses={selectedStatuses}
